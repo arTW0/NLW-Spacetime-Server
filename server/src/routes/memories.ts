@@ -88,7 +88,7 @@ export async function memoriesRoutes(app: FastifyInstance) {
     })
     const { id } = paramsSchema.parse(request.params)
 
-    const memory = await prisma.memory.delete({
+    await prisma.memory.delete({
       where: {
         id,
       },
